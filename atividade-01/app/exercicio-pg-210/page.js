@@ -4,6 +4,7 @@ export default function Exercicio210() {
   return (
     <main style={styles.container}>
         <Link href="/" style={styles.linkVoltar}>
+        Voltar
       </Link>
       <h1 style={styles.titulo}>
         Primeiro exercício de CSS
@@ -25,7 +26,22 @@ const styles = {
     margin: 0,
     padding: '20px',
   },
-  titulo: {
+   linkVoltar: {
+    position: 'absolute',
+    top: '20px',
+    left: '20px',
+    backgroundColor: 'white', 
+    color: 'pink',
+    padding: '12px 20px',
+    borderRadius: '6px',
+    textDecoration: 'none',
+    fontFamily: 'sans-serif',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    zIndex: 99, 
+    boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+   },
+    titulo: {
     backgroundColor: 'red',
     border: '2px solid green',
     color: 'white',
