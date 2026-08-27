@@ -78,7 +78,7 @@ const styles = {
     fontWeight: 'bold',
     fontFamily: '"Times New Roman", Times, serif',
     fontSize: '18px',
-    color: 'pink', 
+    color: 'black', 
     transition: 'color 0.2s',
   }
 };

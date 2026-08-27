@@ -74,6 +74,6 @@ const styles = {
     textAlign: 'center',
     border: '2px solid #000',
     margin: '0 auto', 
-    boxSizing: 'content-box', 
+    boxSizing: 'border-box', 
   }
 };
