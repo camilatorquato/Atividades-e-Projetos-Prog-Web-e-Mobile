@@ -30,7 +30,7 @@ const styles = {
     position: 'absolute',
     top: '20px',
     left: '20px',
-    backgroundColor: 'white', 
+    backgroundColor: 'black', 
     color: 'pink',
     padding: '12px 20px',
     borderRadius: '6px',
