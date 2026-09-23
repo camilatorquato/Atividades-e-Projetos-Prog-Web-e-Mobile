@@ -59,7 +59,7 @@ export default function JogoForca() {
 
       {/* Desenho do Boneco usando CSS/SVG simples */}
       <div style={styles.areaForca}>
-        <svg height="200" width="150" style={{ stroke: '#333', strokeWidth: '4', fill: 'none' }}>
+        <svg height="200" width="150" style={{ stroke: '#fff', strokeWidth: '4', fill: 'none' }}>
           {/* Base e Estrutura da Forca */}
           <line x1="10" y1="190" x2="140" y2="190" />
           <line x1="40" y1="190" x2="40" y2="20" />
@@ -67,12 +67,12 @@ export default function JogoForca() {
           <line x1="100" y1="20" x2="100" y2="40" />
 
           {/* Partes do Boneco de acordo com o número de erros */}
-          {erros >= 1 && <circle cx="100" cy="55" r="15" stroke="#ef4444" />} {/* Cabeça */}
-          {erros >= 2 && <line x1="100" y1="70" x2="100" y2="120" stroke="#ef4444" />} {/* Corpo */}
-          {erros >= 3 && <line x1="100" y1="85" x2="80" y2="105" stroke="#ef4444" />} {/* Braço Esq */}
-          {erros >= 4 && <line x1="100" y1="85" x2="120" y2="105" stroke="#ef4444" />} {/* Braço Dir */}
-          {erros >= 5 && <line x1="100" y1="120" x2="85" y2="155" stroke="#ef4444" />} {/* Perna Esq */}
-          {erros >= 6 && <line x1="100" y1="120" x2="115" y2="155" stroke="#ef4444" />} {/* Perna Dir */}
+          {erros >= 1 && <circle cx="100" cy="55" r="15" stroke="#f878cd" />} {/* Cabeça */}
+          {erros >= 2 && <line x1="100" y1="70" x2="100" y2="120" stroke="#f878cd" />} {/* Corpo */}
+          {erros >= 3 && <line x1="100" y1="85" x2="80" y2="105" stroke="#f878cd" />} {/* Braço Esq */}
+          {erros >= 4 && <line x1="100" y1="85" x2="120" y2="105" stroke="#f878cd" />} {/* Braço Dir */}
+          {erros >= 5 && <line x1="100" y1="120" x2="85" y2="155" stroke="#f878cd" />} {/* Perna Esq */}
+          {erros >= 6 && <line x1="100" y1="120" x2="115" y2="155" stroke="#f878cd" />} {/* Perna Dir */}
         </svg>
       </div>
 
@@ -92,14 +92,14 @@ export default function JogoForca() {
       {/* Interface de Vitória ou Derrota */}
       {venceu && (
         <div style={styles.msgVitoria}>
-          <h2>🎉 Parabéns, você venceu!</h2>
+          <h2> Parabéns, você venceu!</h2>
           <p>A palavra era: <strong>{palavra}</strong></p>
         </div>
       )}
 
       {perdeu && (
         <div style={styles.msgDerrota}>
-          <h2>❌ Você perdeu!</h2>
+          <h2> Você perdeu!</h2>
           <p>A palavra correta era: <strong>{palavra}</strong></p>
         </div>
       )}
@@ -112,8 +112,8 @@ export default function JogoForca() {
           const errou = jaUsou && !palavra.includes(letra);
 
           let btnEstilo = styles.btnTeclado;
-          if (acertou) btnEstilo = { ...styles.btnTeclado, backgroundColor: '#22c55e', color: '#fff' };
-          if (errou) btnEstilo = { ...styles.btnTeclado, backgroundColor: '#cbd5e1', color: '#94a3b8' };
+          if (acertou) btnEstilo = { ...styles.btnTeclado, backgroundColor: '#f878cd', color: '#fff' };
+          if (errou) btnEstilo = { ...styles.btnTeclado, backgroundColor: '#383c40', color: '#fff' };
 
           return (
             <button
@@ -130,7 +130,7 @@ export default function JogoForca() {
 
       {/* Botão Reiniciar */}
       <button onClick={reiniciarJogo} style={styles.btnReiniciar}>
-        🔄 Novo Jogo
+         Novo Jogo
       </button>
     </main>
   );
@@ -143,29 +143,29 @@ const styles = {
     padding: '20px',
     textAlign: 'center',
     fontFamily: 'system-ui, sans-serif',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#1e293b',
     borderRadius: '12px',
     boxShadow: '0 4px 15px rgba(0,0,0,0.08)',
   },
-  linkVoltar: { display: 'inline-block', marginBottom: '15px', color: '#4f46e5', textDecoration: 'none', fontWeight: 'bold' },
-  titulo: { fontSize: '28px', color: '#0f172a', marginBottom: '10px' },
+  linkVoltar: { display: 'inline-block', marginBottom: '15px', color: '#f878cd', textDecoration: 'none', fontWeight: 'bold' },
+  titulo: { fontSize: '28px', color: '#ffffff', marginBottom: '10px' },
   areaForca: { margin: '15px 0' },
-  tentativasRestantes: { fontSize: '16px', color: '#475569', marginBottom: '20px' },
+  tentativasRestantes: { fontSize: '16px', color: '#ffffff', marginBottom: '20px' },
   palavraContainer: { display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '25px' },
-  tracoLetra: { fontSize: '32px', fontWeight: 'bold', color: '#0f172a', borderBottom: '3px solid #333', padding: '0 8px' },
+  tracoLetra: { fontSize: '32px', fontWeight: 'bold', color: '#ffffff', borderBottom: '3px solid #ffffff', padding: '0 8px' },
   teclado: { display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center', marginBottom: '25px' },
   btnTeclado: {
     width: '38px',
     height: '42px',
     fontSize: '16px',
     fontWeight: 'bold',
-    backgroundColor: '#f1f5f9',
+    backgroundColor: '#1e293b',
     border: '1px solid #cbd5e1',
     borderRadius: '6px',
     cursor: 'pointer',
   },
   btnReiniciar: {
-    backgroundColor: '#4f46e5',
+    backgroundColor: '#f878cd',
     color: '#fff',
     border: 'none',
     padding: '12px 24px',
@@ -174,6 +174,6 @@ const styles = {
     borderRadius: '6px',
     cursor: 'pointer',
   },
-  msgVitoria: { backgroundColor: '#dcfce7', color: '#166534', padding: '15px', borderRadius: '8px', marginBottom: '20px' },
-  msgDerrota: { backgroundColor: '#fee2e2', color: '#991b1b', padding: '15px', borderRadius: '8px', marginBottom: '20px' },
+  msgVitoria: { backgroundColor: '#f878cd', color: '#fff', padding: '15px', borderRadius: '8px', marginBottom: '20px' },
+  msgDerrota: { backgroundColor: '#f878cd', color: '#fff', padding: '15px', borderRadius: '8px', marginBottom: '20px' },
 };
